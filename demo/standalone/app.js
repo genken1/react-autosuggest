@@ -3,66 +3,67 @@
 const languages = [
   {
     name: 'C',
-    year: 1972
+    year: 1972,
   },
   {
     name: 'C#',
-    year: 2000
+    year: 2000,
   },
   {
     name: 'C++',
-    year: 1983
+    year: 1983,
   },
   {
     name: 'Clojure',
-    year: 2007
+    year: 2007,
   },
   {
     name: 'Elm',
-    year: 2012
+    year: 2012,
   },
   {
     name: 'Go',
-    year: 2009
+    year: 2009,
   },
   {
     name: 'Haskell',
-    year: 1990
+    year: 1990,
   },
   {
     name: 'Java',
-    year: 1995
+    year: 1995,
   },
   {
     name: 'JavaScript',
-    year: 1995
+    year: 1995,
   },
   {
     name: 'Perl',
-    year: 1987
+    year: 1987,
   },
   {
     name: 'PHP',
-    year: 1995
+    year: 1995,
   },
   {
     name: 'Python',
-    year: 1991
+    year: 1991,
   },
   {
     name: 'Ruby',
-    year: 1995
+    year: 1995,
   },
   {
     name: 'Scala',
-    year: 2003
-  }
+    year: 2003,
+  },
 ];
 
 // https://developer.mozilla.org/en/docs/Web/JavaScript/Guide/Regular_Expressions#Using_special_characters
-const escapeRegexCharacters = str => str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+const escapeRegexCharacters = (str) =>
+  str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 
-const getSuggestions = value => {
+const getSuggestions = (value) => {
   const escapedValue = escapeRegexCharacters(value.trim());
 
   if (escapedValue === '') {
@@ -71,12 +72,12 @@ const getSuggestions = value => {
 
   const regex = new RegExp('^' + escapedValue, 'i');
 
-  return languages.filter(language => regex.test(language.name));
+  return languages.filter((language) => regex.test(language.name));
 };
 
-const getSuggestionValue = suggestion => suggestion.name;
+const getSuggestionValue = (suggestion) => suggestion.name;
 
-const renderSuggestion = suggestion => <span>{suggestion.name}</span>;
+const renderSuggestion = (suggestion) => <span>{suggestion.name}</span>;
 
 // prettier-ignore
 class App extends React.Component { // eslint-disable-line no-undef

@@ -3,7 +3,7 @@ import TestUtils from 'react-dom/test-utils';
 import {
   init,
   expectInputAttribute,
-  expectInputReferenceToBeSet
+  expectInputReferenceToBeSet,
 } from '../helpers';
 import AutosuggestApp from './AutosuggestApp';
 

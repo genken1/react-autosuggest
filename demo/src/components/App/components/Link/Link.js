@@ -3,7 +3,7 @@ import styles from './Link.less';
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Link = props => {
+const Link = (props) => {
   const { className, href, underline, children } = props;
   const klass =
     (className === null ? '' : className + ' ') +
@@ -20,12 +20,12 @@ Link.propTypes = {
   className: PropTypes.string,
   href: PropTypes.string.isRequired,
   underline: PropTypes.bool.isRequired,
-  children: PropTypes.node
+  children: PropTypes.node,
 };
 
 Link.defaultProps = {
   className: null,
-  underline: true
+  underline: true,
 };
 
 export default Link;

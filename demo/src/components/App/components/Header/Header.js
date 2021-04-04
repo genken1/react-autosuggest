@@ -10,17 +10,17 @@ export default class Header extends Component {
     super();
 
     this.state = {
-      stargazers: '3754'
+      stargazers: '3754',
     };
   }
 
   componentDidMount() {
     fetch('https://api.github.com/repos/moroshko/react-autosuggest')
-      .then(response => response.json())
-      .then(response => {
+      .then((response) => response.json())
+      .then((response) => {
         if (response.stargazers_count) {
           this.setState({
-            stargazers: String(response.stargazers_count)
+            stargazers: String(response.stargazers_count),
           });
         }
       });

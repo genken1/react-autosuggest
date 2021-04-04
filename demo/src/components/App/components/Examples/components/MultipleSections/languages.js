@@ -4,80 +4,80 @@ export default [
     languages: [
       {
         name: 'C',
-        year: 1972
-      }
-    ]
+        year: 1972,
+      },
+    ],
   },
   {
     title: '1980s',
     languages: [
       {
         name: 'C++',
-        year: 1983
+        year: 1983,
       },
       {
         name: 'Perl',
-        year: 1987
-      }
-    ]
+        year: 1987,
+      },
+    ],
   },
   {
     title: '1990s',
     languages: [
       {
         name: 'Haskell',
-        year: 1990
+        year: 1990,
       },
       {
         name: 'Python',
-        year: 1991
+        year: 1991,
       },
       {
         name: 'Java',
-        year: 1995
+        year: 1995,
       },
       {
         name: 'JavaScript',
-        year: 1995
+        year: 1995,
       },
       {
         name: 'PHP',
-        year: 1995
+        year: 1995,
       },
       {
         name: 'Ruby',
-        year: 1995
-      }
-    ]
+        year: 1995,
+      },
+    ],
   },
   {
     title: '2000s',
     languages: [
       {
         name: 'C#',
-        year: 2000
+        year: 2000,
       },
       {
         name: 'Scala',
-        year: 2003
+        year: 2003,
       },
       {
         name: 'Clojure',
-        year: 2007
+        year: 2007,
       },
       {
         name: 'Go',
-        year: 2009
-      }
-    ]
+        year: 2009,
+      },
+    ],
   },
   {
     title: '2010s',
     languages: [
       {
         name: 'Elm',
-        year: 2012
-      }
-    ]
-  }
+        year: 2012,
+      },
+    ],
+  },
 ];

@@ -14,7 +14,7 @@ import {
   clickCombinedCharacterEnter,
   clickDown,
   clickUp,
-  focusAndSetInputValue
+  focusAndSetInputValue,
 } from '../helpers';
 import AutosuggestApp, { onSuggestionsFetchRequested } from './AutosuggestApp';
 
@@ -32,7 +32,7 @@ const allSuggestions = [
   'PHP',
   'Python',
   'Ruby',
-  'Scala'
+  'Scala',
 ];
 
 describe('Autosuggest with alwaysRenderSuggestions={true}', () => {
@@ -170,7 +170,7 @@ describe('Autosuggest with alwaysRenderSuggestions={true}', () => {
       expect(onSuggestionsFetchRequested).to.have.been.calledOnce;
       expect(onSuggestionsFetchRequested).to.have.been.calledWithExactly({
         value: 'JavaScript',
-        reason: 'suggestion-selected'
+        reason: 'suggestion-selected',
       });
     });
   });

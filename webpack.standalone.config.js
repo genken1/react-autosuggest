@@ -10,16 +10,16 @@ module.exports = [
     output: {
       filename: './dist/standalone/autosuggest.js',
       libraryTarget: 'umd',
-      library: 'Autosuggest'
+      library: 'Autosuggest',
     },
 
     optimization: {
       minimizer: [
         new TerserPlugin({
           cache: true,
-          parallel: true
-        })
-      ]
+          parallel: true,
+        }),
+      ],
     },
 
     module: {
@@ -28,15 +28,15 @@ module.exports = [
           test: /\.js$/,
           loader: 'babel-loader',
           include: [
-            path.join(__dirname, 'src') // Must be an absolute path
-          ]
-        }
-      ]
+            path.join(__dirname, 'src'), // Must be an absolute path
+          ],
+        },
+      ],
     },
 
     externals: {
-      react: 'React'
-    }
+      react: 'React',
+    },
   },
   {
     entry: './src/index.js',
@@ -45,7 +45,7 @@ module.exports = [
     output: {
       filename: './dist/standalone/autosuggest.min.js',
       libraryTarget: 'umd',
-      library: 'Autosuggest'
+      library: 'Autosuggest',
     },
 
     module: {
@@ -54,22 +54,22 @@ module.exports = [
           test: /\.js$/,
           loader: 'babel-loader',
           include: [
-            path.join(__dirname, 'src') // Must be an absolute path
-          ]
-        }
-      ]
+            path.join(__dirname, 'src'), // Must be an absolute path
+          ],
+        },
+      ],
     },
 
     externals: {
-      react: 'React'
+      react: 'React',
     },
 
     plugins: [
       new webpack.DefinePlugin({
         'process.env': {
-          NODE_ENV: JSON.stringify('production')
-        }
-      })
-    ]
-  }
+          NODE_ENV: JSON.stringify('production'),
+        },
+      }),
+    ],
+  },
 ];

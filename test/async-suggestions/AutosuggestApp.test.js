@@ -8,7 +8,7 @@ import {
   clickEnter,
   clickDown,
   setInputValue,
-  focusAndSetInputValue
+  focusAndSetInputValue,
 } from '../helpers';
 import AutosuggestApp from './AutosuggestApp';
 

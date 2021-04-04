@@ -5,36 +5,36 @@ import languages from '../plain-list/languages';
 import { escapeRegexCharacters } from '../../demo/src/components/utils/utils.js';
 import { addEvent } from '../helpers';
 
-const getMatchingLanguages = value => {
+const getMatchingLanguages = (value) => {
   const escapedValue = escapeRegexCharacters(value.trim());
   const regex = new RegExp('^' + escapedValue, 'i');
 
-  return languages.filter(language => regex.test(language.name));
+  return languages.filter((language) => regex.test(language.name));
 };
 
 let app = null;
 
-export const getSuggestionValue = suggestion => suggestion.name;
+export const getSuggestionValue = (suggestion) => suggestion.name;
 
-export const renderSuggestion = suggestion => <span>{suggestion.name}</span>;
+export const renderSuggestion = (suggestion) => <span>{suggestion.name}</span>;
 
 export const onChange = sinon.spy((event, { newValue }) => {
   addEvent('onChange');
 
   app.setState({
-    value: newValue
+    value: newValue,
   });
 });
 
 export const onSuggestionsFetchRequested = ({ value }) => {
   app.setState({
-    suggestions: getMatchingLanguages(value)
+    suggestions: getMatchingLanguages(value),
   });
 };
 
 export const onSuggestionsClearRequested = () => {
   app.setState({
-    suggestions: []
+    suggestions: [],
   });
 };
 
@@ -52,7 +52,7 @@ export default class AutosuggestApp extends Component {
 
     this.state = {
       value: '',
-      suggestions: []
+      suggestions: [],
     };
   }
 
@@ -60,7 +60,7 @@ export default class AutosuggestApp extends Component {
     const { value, suggestions } = this.state;
     const inputProps = {
       value,
-      onChange
+      onChange,
     };
 
     return (

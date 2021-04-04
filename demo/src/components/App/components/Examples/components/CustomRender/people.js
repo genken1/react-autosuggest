@@ -2,21 +2,21 @@ export default [
   {
     first: 'Charlie',
     last: 'Brown',
-    twitter: 'dancounsell'
+    twitter: 'dancounsell',
   },
   {
     first: 'Charlotte',
     last: 'White',
-    twitter: 'mtnmissy'
+    twitter: 'mtnmissy',
   },
   {
     first: 'Chloe',
     last: 'Jones',
-    twitter: 'ladylexy'
+    twitter: 'ladylexy',
   },
   {
     first: 'Cooper',
     last: 'King',
-    twitter: 'steveodom'
-  }
+    twitter: 'steveodom',
+  },
 ];

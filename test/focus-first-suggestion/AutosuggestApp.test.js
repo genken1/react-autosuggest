@@ -31,7 +31,7 @@ describe('Autosuggest with highlightFirstSuggestion={true}', () => {
   });
 
   describe('when highlightFirstSuggestion changes from true to false', () => {
-    it("should unhighlight the suggestion", () => {
+    it('should unhighlight the suggestion', () => {
       focusAndSetInputValue('j');
       expectHighlightedSuggestion('Java');
 
@@ -39,7 +39,7 @@ describe('Autosuggest with highlightFirstSuggestion={true}', () => {
       expectHighlightedSuggestion(null);
     });
 
-    it("should retain the selected suggestion if it was set manually", () => {
+    it('should retain the selected suggestion if it was set manually', () => {
       focusAndSetInputValue('j');
       expectHighlightedSuggestion('Java');
       clickDown();
@@ -49,7 +49,7 @@ describe('Autosuggest with highlightFirstSuggestion={true}', () => {
       expectHighlightedSuggestion('JavaScript');
     });
 
-    it("should re-highlight the suggestion if it becomes true again", () => {
+    it('should re-highlight the suggestion if it becomes true again', () => {
       focusAndSetInputValue('j');
       expectHighlightedSuggestion('Java');
 

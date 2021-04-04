@@ -8,11 +8,11 @@ import {
   clickDown,
   focusAndSetInputValue,
   clearEvents,
-  getEvents
+  getEvents,
 } from '../helpers';
 import AutosuggestApp, {
   onChange,
-  onSuggestionSelected
+  onSuggestionSelected,
 } from './AutosuggestApp';
 
 describe('Autosuggest with highlightFirstSuggestion={true} and clear on Enter', () => {

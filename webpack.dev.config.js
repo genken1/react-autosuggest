@@ -10,13 +10,13 @@ module.exports = {
   mode: 'development',
   entry: [
     `webpack-dev-server/client?http://${host}:${port}`,
-    './demo/src/index'
+    './demo/src/index',
   ],
 
   output: {
     path: path.join(__dirname, 'dist'), // Must be an absolute path
     filename: 'index.js',
-    publicPath: '/demo/dist/'
+    publicPath: '/demo/dist/',
   },
 
   module: {
@@ -26,8 +26,8 @@ module.exports = {
         loader: 'babel-loader',
         include: [
           path.join(__dirname, 'src'), // Must be an absolute path
-          path.join(__dirname, 'demo', 'src') // Must be an absolute path
-        ]
+          path.join(__dirname, 'demo', 'src'), // Must be an absolute path
+        ],
       },
       {
         test: /\.less$/,
@@ -37,37 +37,37 @@ module.exports = {
             loader: 'css-loader',
             options: {
               modules: {
-                localIdentName: '[name]__[local]___[hash:base64:5]'
-              }
-            }
+                localIdentName: '[name]__[local]___[hash:base64:5]',
+              },
+            },
           },
           {
             loader: 'postcss-loader',
             options: {
-              plugins: [autoprefixer()]
-            }
+              plugins: [autoprefixer()],
+            },
           },
           {
             loader: 'less-loader',
             options: {
-              paths: [path.resolve(__dirname, 'demo', 'src')]
-            }
-          }
+              paths: [path.resolve(__dirname, 'demo', 'src')],
+            },
+          },
         ],
-        exclude: /node_modules/
+        exclude: /node_modules/,
       },
       {
         test: /\.jpg$/,
-        loader: 'url-loader?limit=8192' // 8kb
+        loader: 'url-loader?limit=8192', // 8kb
       },
       {
         test: /\.svg$/,
         use: [
           'url-loader?limit=8192!', // 8kb
-          'svgo-loader'
-        ]
-      }
-    ]
+          'svgo-loader',
+        ],
+      },
+    ],
   },
 
   resolve: {
@@ -75,8 +75,8 @@ module.exports = {
       'node_modules',
       'components',
       'src',
-      path.join(__dirname, 'demo', 'src') // Must be an absolute path
-    ]
+      path.join(__dirname, 'demo', 'src'), // Must be an absolute path
+    ],
   },
 
   devtool: 'source-map',
@@ -84,7 +84,7 @@ module.exports = {
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
     new MiniCssExtractPlugin({
-      filename: 'app.css'
-    })
-  ]
+      filename: 'app.css',
+    }),
+  ],
 };

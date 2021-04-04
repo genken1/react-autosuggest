@@ -4,36 +4,36 @@ import Autosuggest from '../../src/Autosuggest';
 import languages from '../plain-list/languages';
 import { escapeRegexCharacters } from '../../demo/src/components/utils/utils.js';
 
-const getMatchingLanguages = value => {
+const getMatchingLanguages = (value) => {
   const escapedValue = escapeRegexCharacters(value.trim());
   const regex = new RegExp('^' + escapedValue, 'i');
 
-  return languages.filter(language => regex.test(language.name));
+  return languages.filter((language) => regex.test(language.name));
 };
 
 let app = null;
 
 const onChange = (event, { newValue }) => {
   app.setState({
-    value: newValue
+    value: newValue,
   });
 };
 
 const onSuggestionsFetchRequested = ({ value }) => {
   app.setState({
-    suggestions: getMatchingLanguages(value)
+    suggestions: getMatchingLanguages(value),
   });
 };
 
 const onSuggestionsClearRequested = () => {
   app.setState({
-    suggestions: []
+    suggestions: [],
   });
 };
 
-const getSuggestionValue = suggestion => suggestion.name;
+const getSuggestionValue = (suggestion) => suggestion.name;
 
-const renderSuggestion = suggestion => suggestion.name;
+const renderSuggestion = (suggestion) => suggestion.name;
 
 export const renderSuggestionsContainer = sinon.spy(
   ({ containerProps, children, query }) => (
@@ -54,11 +54,11 @@ export default class AutosuggestApp extends Component {
 
     this.state = {
       value: '',
-      suggestions: []
+      suggestions: [],
     };
   }
 
-  storeAutosuggestReference = autosuggest => {
+  storeAutosuggestReference = (autosuggest) => {
     if (autosuggest !== null) {
       this.input = autosuggest.input;
     }
@@ -68,7 +68,7 @@ export default class AutosuggestApp extends Component {
     const { value, suggestions } = this.state;
     const inputProps = {
       value,
-      onChange
+      onChange,
     };
 
     return (

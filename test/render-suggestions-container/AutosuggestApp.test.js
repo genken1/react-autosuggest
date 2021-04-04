@@ -7,7 +7,7 @@ import {
   containerPropsMatcher,
   getInnerHTML,
   getElementWithClass,
-  setInputValue
+  setInputValue,
 } from '../helpers';
 import AutosuggestApp, { renderSuggestionsContainer } from './AutosuggestApp';
 
@@ -30,7 +30,7 @@ describe('Autosuggest with renderSuggestionsContainer', () => {
     expect(renderSuggestionsContainer).to.be.calledWith({
       containerProps: containerPropsMatcher,
       children: childrenMatcher,
-      query: 'c'
+      query: 'c',
     });
   });
 });

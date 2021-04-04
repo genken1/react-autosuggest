@@ -5,7 +5,7 @@ module.exports = {
   mode: 'production',
 
   output: {
-    filename: './demo/standalone/compiled.app.js'
+    filename: './demo/standalone/compiled.app.js',
   },
 
   module: {
@@ -14,9 +14,9 @@ module.exports = {
         test: /\.js$/,
         loader: 'babel-loader',
         include: [
-          path.join(__dirname, 'demo', 'standalone') // Must be an absolute path
-        ]
-      }
-    ]
-  }
+          path.join(__dirname, 'demo', 'standalone'), // Must be an absolute path
+        ],
+      },
+    ],
+  },
 };

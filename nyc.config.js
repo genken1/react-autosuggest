@@ -10,5 +10,5 @@ module.exports = {
   exclude: ['test/**/*.js'],
   reporter: ['lcov', 'text-summary'],
   all: true,
-  'check-coverage': true
+  'check-coverage': true,
 };

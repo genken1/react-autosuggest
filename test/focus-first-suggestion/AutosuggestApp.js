@@ -15,7 +15,7 @@ let app = null;
 
 export const setHighlightFirstSuggestion = (value) => {
   app.setState({
-    highlightFirstSuggestion: value
+    highlightFirstSuggestion: value,
   });
 };
 
@@ -63,7 +63,7 @@ export default class AutosuggestApp extends Component {
       value: '',
       suggestions: [],
       highlightedSuggestion: null,
-      highlightFirstSuggestion: false
+      highlightFirstSuggestion: false,
     };
   }
 

@@ -4,29 +4,29 @@ import Autosuggest from '../../src/Autosuggest';
 import languages from './languages';
 import { escapeRegexCharacters } from '../../demo/src/components/utils/utils.js';
 
-const getMatchingLanguages = value => {
+const getMatchingLanguages = (value) => {
   const escapedValue = escapeRegexCharacters(value.trim());
   const regex = new RegExp('^' + escapedValue, 'i');
 
   return languages
-    .map(section => {
+    .map((section) => {
       return {
         title: section.title,
-        languages: section.languages.filter(language =>
+        languages: section.languages.filter((language) =>
           regex.test(language.name)
-        )
+        ),
       };
     })
-    .filter(section => section.languages.length > 0);
+    .filter((section) => section.languages.length > 0);
 };
 
 let app = null;
 
-export const getSuggestionValue = sinon.spy(suggestion => {
+export const getSuggestionValue = sinon.spy((suggestion) => {
   return suggestion.name;
 });
 
-export const renderSuggestion = sinon.spy(suggestion => {
+export const renderSuggestion = sinon.spy((suggestion) => {
   return <span>{suggestion.name}</span>;
 });
 
@@ -34,7 +34,7 @@ const alwaysTrue = () => true;
 
 export const onChange = sinon.spy((event, { newValue }) => {
   app.setState({
-    value: newValue
+    value: newValue,
   });
 });
 
@@ -42,13 +42,13 @@ export const onBlur = sinon.spy();
 
 export const onSuggestionsFetchRequested = sinon.spy(({ value }) => {
   app.setState({
-    suggestions: getMatchingLanguages(value)
+    suggestions: getMatchingLanguages(value),
   });
 });
 
 export const onSuggestionsClearRequested = sinon.spy(() => {
   app.setState({
-    suggestions: []
+    suggestions: [],
   });
 });
 
@@ -56,17 +56,17 @@ export const onSuggestionSelected = sinon.spy();
 
 export const onSuggestionHighlighted = sinon.spy();
 
-export const renderSectionTitle = sinon.spy(section => {
+export const renderSectionTitle = sinon.spy((section) => {
   return <strong>{section.title}</strong>;
 });
 
-export const getSectionSuggestions = sinon.spy(section => {
+export const getSectionSuggestions = sinon.spy((section) => {
   return section.languages;
 });
 
 let highlightFirstSuggestion = false;
 
-export const setHighlightFirstSuggestion = value => {
+export const setHighlightFirstSuggestion = (value) => {
   highlightFirstSuggestion = value;
 };
 
@@ -78,16 +78,16 @@ export default class AutosuggestApp extends Component {
 
     this.state = {
       value: '',
-      suggestions: []
+      suggestions: [],
     };
   }
 
-  onClearMouseDown = event => {
+  onClearMouseDown = (event) => {
     event.preventDefault();
 
     this.setState({
       value: '',
-      suggestions: getMatchingLanguages('')
+      suggestions: getMatchingLanguages(''),
     });
   };
 
@@ -96,7 +96,7 @@ export default class AutosuggestApp extends Component {
     const inputProps = {
       value,
       onChange,
-      onBlur
+      onBlur,
     };
 
     return (

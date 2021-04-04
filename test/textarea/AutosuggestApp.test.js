@@ -9,7 +9,7 @@ import {
   expectInputValue,
   clearEvents,
   expectLetBrowserHandleKeyDown,
-  expectDontLetBrowserHandleKeyDown
+  expectDontLetBrowserHandleKeyDown,
 } from '../helpers';
 import AutosuggestApp, { onSuggestionSelected } from './AutosuggestApp';
 
@@ -21,7 +21,7 @@ describe('Autosuggest with textarea', () => {
     clearEvents();
   });
 
-  it("inserts a newline if you press enter without selecting a suggestion", () => {
+  it('inserts a newline if you press enter without selecting a suggestion', () => {
     clickEnter();
 
     expectInputValue('p');
